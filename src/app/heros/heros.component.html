@@ -1,0 +1,16 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let emp of employee_list" [class.selected] = "emp === hero_after_click" (click)="saveme(emp)">
+    <span class="badge">{{emp.id}} </span> {{emp.name}}
+  </li>
+</ul>
+<hr><hr>
+<app-hero-detail [hero_after]="hero_after_click"></app-hero-detail>
+<!--
+  Here we click individual emplyee and within click function we get value and assign it hero_after_click
+  variable in heros.component.ts file and again map this value to here in line no 8
+  Now this(hero_after_click) value is assign to hero_after variable , this variable is defined in 
+  child template(hero-detail.component.ts) with input selector , and then pass the same value to 
+  hero-detail.component.html
+-->
+<br><br><br>    
